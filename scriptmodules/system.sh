@@ -244,7 +244,7 @@ function platform_odroid-c2() {
     __default_cflags="-O3 -march=armv8-a+crc -mtune=cortex-a53 -funsafe-math-optimizations"
     __default_asflags=""
     __default_makeflags="-j2"
-    __platform_flags="armv8 neon mali"
+    __platform_flags="armv8 neon"
     __qemu_cpu=cortex-a9
     __has_binaries=0
 }
