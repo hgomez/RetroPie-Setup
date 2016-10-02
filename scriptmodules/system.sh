@@ -169,6 +169,9 @@ function get_platform() {
             ODROIDC)
                 __platform="odroid-c1"
                 ;;
+            ODROID-C2)
+                __platform="odroid-c2"
+                ;;
             "Freescale i.MX6 Quad/DualLite (Device Tree)")
                 __platform="imx6"
                 ;;
@@ -233,6 +236,15 @@ function platform_odroid-c1() {
     __default_asflags=""
     __default_makeflags="-j2"
     __platform_flags="arm armv7 neon mali"
+    __qemu_cpu=cortex-a9
+    __has_binaries=0
+}
+
+function platform_odroid-c2() {
+    __default_cflags="-O3 -march=armv8-a+crc -mtune=cortex-a53 -funsafe-math-optimizations"
+    __default_asflags=""
+    __default_makeflags="-j2"
+    __platform_flags="armv8 neon mali"
     __qemu_cpu=cortex-a9
     __has_binaries=0
 }
